@@ -22,6 +22,8 @@ inputs:
     type: File
     inputBinding:
       position: 2
+    secondaryFiles:
+      - .csi
 
   samples: 
     type: File

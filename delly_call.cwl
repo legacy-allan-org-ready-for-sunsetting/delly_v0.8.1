@@ -58,6 +58,8 @@ inputs:
 outputs:
   output:
     type: File?
+    secondaryFiles:
+      - .csi
     outputBinding:
       glob: |
         ${
