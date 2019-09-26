@@ -7,7 +7,7 @@ inputs:
     type: string
 
   normal_sample_name:
-    typeL string
+    type: string
 
 outputs:
   samples_file:
@@ -44,3 +44,9 @@ steps:
           outputs:
               pairfile:
                   type: stdout
+
+requirements:
+  - class: SubworkflowFeatureRequirement
+  - class: ScatterFeatureRequirement
+  - class: InlineJavascriptRequirement
+  - class: StepInputExpressionRequirement
