@@ -19,7 +19,7 @@ inputs:
       prefix: --svtype
 
   genome:
-    type: string
+    type: File
     inputBinding:
       prefix: --genome
     secondaryFiles:
