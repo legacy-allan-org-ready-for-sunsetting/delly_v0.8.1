@@ -22,6 +22,14 @@ inputs:
     type: string
     inputBinding:
       prefix: --genome
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+      - .fai
+      - ^.dict 
   
   bam_tumor:
     type: File
