@@ -37,7 +37,9 @@ inputs:
 
 outputs:
   output:
-    type: File?
+    type: File
+    secondaryFiles:
+      - .csi
     outputBinding:
       glob: |
         ${
