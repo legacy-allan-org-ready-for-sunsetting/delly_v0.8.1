@@ -2,7 +2,7 @@ cwlVersion: v1.0
 
 class: CommandLineTool
 baseCommand: [ delly, call ]
-id: polysolver
+id: delly_call
 
 requirements:
   InlineJavascriptRequirement: {}
