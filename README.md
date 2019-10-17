@@ -10,7 +10,7 @@ CWLs for Delly v0.8.1
 ## Version of tools
 
 | Tool	| Version	| Location	| Image Digest	|
-|---	|---	|---	|
+|--|--|--|--|
 | delly	| v0.8.1	| https://github.com/dellytools/delly/tree/v0.8.1	| [cmopipeline/delly:v0.8.1](https://hub.docker.com/layers/cmopipeline/delly/v0.8.1/images/sha256-28fe6e8ca6003a5b1ef89dba4d90ba89aa68d5579132726fb28dae7edcf0656b) 	|
 
 ## Explanation of CWLs
