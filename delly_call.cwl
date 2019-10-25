@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       prefix: --svtype
 
+  tumor_sample_name:
+    type: string
+
+  normal_sample_name:
+    type: string
+
   genome:
     type: File
     inputBinding:
