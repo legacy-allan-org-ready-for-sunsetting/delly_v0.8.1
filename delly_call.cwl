@@ -1,13 +1,13 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: [ delly, call ]
+baseCommand: [ 'source', '/usr/local/bin/set_ld_library_path.sh', '&&', 'delly', 'call' ] # workaround for singularity <=3.3.0
 id: delly_call
 
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement: 
-    dockerPull: cmopipeline/delly:v0.8.1
+    dockerPull: mskcc/delly:v0.8.1
   ResourceRequirement:
     ramMin: 4000
     coresMin: 1
