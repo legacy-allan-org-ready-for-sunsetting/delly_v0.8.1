@@ -1,7 +1,7 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: [ 'source', '/usr/local/bin/set_ld_library_path.sh', '&&', 'delly', 'call' ] # workaround for singularity <=3.3.0
+baseCommand: [ '/bin/bash/', '&&' , 'source', '/usr/local/bin/set_ld_library_path.sh', '&&', 'delly', 'call' ] # workaround for singularity <=3.3.0
 id: delly_call
 
 requirements:
