@@ -1,13 +1,13 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: [ delly, call ]
+baseCommand: [ '/bin/bash', 'run_delly_call.sh' ] # workaround for singularity <=3.3.0
 id: delly_call
 
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement: 
-    dockerPull: cmopipeline/delly:v0.8.1
+    dockerPull: mskcc/delly:v0.8.1
   ResourceRequirement:
     ramMin: 4000
     coresMin: 1
@@ -16,7 +16,7 @@ inputs:
   svtype:
     type: string
     inputBinding:
-      prefix: --svtype
+      position: 1
 
   tumor_sample_name:
     type: string
@@ -27,7 +27,7 @@ inputs:
   genome:
     type: File
     inputBinding:
-      prefix: --genome
+      position: 2
     secondaryFiles:
       - .amb
       - .ann
@@ -40,26 +40,26 @@ inputs:
   bam_tumor:
     type: File
     inputBinding:
-      position: 1
+      position: 5
     secondaryFiles:
       - ^.bai
 
   bam_normal:
     type: File
     inputBinding:
-      position: 2
+      position: 6
     secondaryFiles:
       - ^.bai
 
   exclude:
     type: File
     inputBinding:
-      prefix: --exclude
+      position: 3
 
   outfile:
     type: string
     inputBinding:
-      prefix: --outfile
+      position: 4
 
 outputs:
   output:
