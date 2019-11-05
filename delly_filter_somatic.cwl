@@ -1,13 +1,13 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: [ '/bin/bash', '&&' , 'source', '/usr/local/bin/set_ld_library_path.sh', '&&', 'delly', 'filter' ] # workaround for singularity <= 3.3.0
+baseCommand: [ '/bin/bash', '/usr/local/bin/run_delly_filter.sh' ] # workaround for singularity <= 3.3.0
 id: delly_filter
 
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement: 
-    dockerPull: cmopipeline/delly:v0.8.1
+    dockerPull: mskcc/delly:v0.8.1
   ResourceRequirement:
     ramMin: 4000
     coresMin: 1
@@ -15,25 +15,24 @@ requirements:
 arguments:
   - position: 1
     valueFrom: somatic
-    prefix: --filter
 
 inputs:
   call_bcf_file:
     type: File
     inputBinding:
-      position: 2
+      position: 4
     secondaryFiles:
       - .csi
 
   samples: 
     type: File
     inputBinding:
-      prefix: --samples
+      position: 2
 
   outfile:
     type: string
     inputBinding:
-      prefix: --outfile
+      position: 3
 
 outputs:
   output:

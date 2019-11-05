@@ -48,3 +48,5 @@ WORKDIR /usr/local/bin
 RUN ln -s /usr/local/bin/delly-0.8.1/src/delly /usr/local/bin/delly
 
 ADD set_ld_library_path.sh /usr/local/bin/ 
+ADD run_delly_call.sh /usr/local/bin/
+ADD run_delly_filter.sh /usr/local/bin/
