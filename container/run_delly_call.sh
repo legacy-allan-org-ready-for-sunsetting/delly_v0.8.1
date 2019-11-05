@@ -11,5 +11,5 @@ delly call \
   --svtype ${svType} \
   --genome ${genomeFile} \
   --exclude ${svCallingExcludeRegions} \
-  --outfile ${idTumor}__${idNormal}_${svType}.bcf \
+  --outfile ${outfile} \
   ${bamTumor} ${bamNormal}
